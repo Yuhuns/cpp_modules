@@ -6,12 +6,11 @@
 /*   By: awallet <awallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 14:27:17 by awallet           #+#    #+#             */
-/*   Updated: 2023/02/14 16:37:12 by awallet          ###   ########.fr       */
+/*   Updated: 2023/02/14 16:49:02 by awallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cstring>
 
 int	main(int ac, char **av)
 {
