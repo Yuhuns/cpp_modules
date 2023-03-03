@@ -5,13 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: awallet <awallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/06/22 16:55:50 by halvarez          #+#    #+#              #
-#    Updated: 2023/02/14 14:14:36 by awallet          ###   ########.fr        #
+#    Created: 2022/06/22 16:55:50 by awallet           #+#    #+#              #
+#    Updated: 2023/03/03 17:53:56 by awallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #Default build version called with make rule = release
-build		:=
+build		:= san
 
 #Compilation of the mandatory part
 NAME		= megaphone
@@ -24,13 +24,13 @@ SRC			+= $(addprefix ${DIR}, ${FILES})
 OBJ			= ${SRC:.cpp=.o}
 DEP			= ${OBJ:.o=.d}
 
-CC			= c++ -std=c++98
+CC			= clang++ -std=c++98
 RM			= rm -rf
 
 #Conditionnal flags depending on the building version
-cflags.rls		:= -Wall -Wextra -Werror -MMD -MP
-cflags.gdb		:= -g3
-cflags.san		:= -g3 -fsanitize=address
+cflags.rls		:= -pedantic -Wall -Wextra -Werror -MMD -MP
+cflags.gdb		:= -g3 -fstandalone-debug
+cflags.san		:= -g3 -fstandalone-debug -fsanitize=address
 CFLAGS			= ${cflags.rls} ${cflags.${build}}
 export			CFLAGS
 

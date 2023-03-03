@@ -6,12 +6,11 @@
 /*   By: awallet <awallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:13:07 by awallet           #+#    #+#             */
-/*   Updated: 2023/03/03 15:11:01 by awallet          ###   ########.fr       */
+/*   Updated: 2023/03/03 17:51:32 by awallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include <stdlib.h>
 
 bool static checkData(std::string str)
 {
@@ -28,6 +27,15 @@ static void	checkEmptyField(Contact *self, std::string field, int i)
 {
 	if (field.empty())
 		self->setContact(i);
+}
+
+void	Contact::showContact(void)
+{
+	std::cout << "Firstname	:	" + this->_firstname << std::endl;
+	std::cout << "Last name	:	" + this->_lastname << std::endl;
+	std::cout << "Nickmame	:	" + this->_nickname << std::endl;
+	std::cout << "Number		:	" + this->_number << std::endl;
+	std::cout << "Secret		:	" + this->_secret << std::endl;
 }
 
 void	Contact::setContact(int i)

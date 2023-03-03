@@ -6,7 +6,7 @@
 #    By: awallet <awallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 16:55:50 by awallet           #+#    #+#              #
-#    Updated: 2023/03/03 14:35:48 by awallet          ###   ########.fr        #
+#    Updated: 2023/03/03 17:52:59 by awallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ CC			= clang++ -std=c++98
 RM			= rm -rf
 
 #Conditionnal flags depending on the building version
-cflags.rls		:= -Wall -Wextra -Werror -MMD -MP
+cflags.rls		:= -pedantic -Wall -Wextra -Werror -MMD -MP
 cflags.gdb		:= -g3 -fstandalone-debug
 cflags.san		:= -g3 -fstandalone-debug -fsanitize=address
 CFLAGS			= ${cflags.rls} ${cflags.${build}}

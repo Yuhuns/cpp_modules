@@ -6,7 +6,7 @@
 /*   By: awallet <awallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:13:23 by awallet           #+#    #+#             */
-/*   Updated: 2023/03/03 14:48:06 by awallet          ###   ########.fr       */
+/*   Updated: 2023/03/03 17:51:39 by awallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@ int	main(void)
 {
 	PhoneBook	phonebook;
 	std::string	input;
-	int	index;
+	unsigned int	index;
 
 	index = 0;
 	while (1)
 	{
 		std::cout << "Please select between ADD, SEARCH or EXIT: ";
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+			exit(0);
 		if (input.compare("ADD") == 0)
 		{
 			if (index == 8)
@@ -31,16 +33,9 @@ int	main(void)
 			index++;
 		}
 		else if (input.compare("SEARCH") == 0)
-			std::cout << "SEARCH" << std::endl;
+			phonebook.search();
 		else if (input.compare("EXIT") == 0)
 			break ;
-		else
-		{
-			if (!input.empty())
-				std::cout << input + " doesn't exist !" << std::endl;
-			else
-				std::cout << "You need to write the option you're looking for." << std::endl;
-		}
 		std::cout.clear();
 		std::cin.clear();
 		input.clear();
