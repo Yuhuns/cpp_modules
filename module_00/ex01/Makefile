@@ -6,7 +6,7 @@
 #    By: awallet <awallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 16:55:50 by awallet           #+#    #+#              #
-#    Updated: 2023/03/01 17:29:06 by awallet          ###   ########.fr        #
+#    Updated: 2023/03/03 14:35:48 by awallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC			+= $(addprefix ${DIR}, ${FILES})
 OBJ			= ${SRC:.cpp=.o}
 DEP			= ${OBJ:.o=.d}
 
-CC			= c++ -std=c++98
+CC			= clang++ -std=c++98
 RM			= rm -rf
 
 #Conditionnal flags depending on the building version

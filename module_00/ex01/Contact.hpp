@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: awallet <awallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 16:44:47 by awallet           #+#    #+#             */
-/*   Updated: 2023/03/01 18:43:40 by awallet          ###   ########.fr       */
+/*   Created: 2023/03/01 17:13:13 by awallet           #+#    #+#             */
+/*   Updated: 2023/03/03 15:10:12 by awallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-void	PhoneBook::add(int index)
+#include <iostream>
+
+class Contact
 {
-	int	n;
+	public:
+		void	setContact(int i);
+	private:
+		int	_index;
+		std::string _firstname;
+		std::string	_lastname;
+		std::string	_nickname;
+		std::string	_number;
+		std::string	_secret;
+};
 
-	n = -1;
-	while (++n < 5)
-		this->_contact[index].setContact(n);
-}
+#endif
