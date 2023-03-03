@@ -5,20 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: awallet <awallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/06/22 16:55:50 by halvarez          #+#    #+#              #
-#    Updated: 2023/02/14 17:04:33 by awallet          ###   ########.fr        #
+#    Created: 2022/06/22 16:55:50 by awallet           #+#    #+#              #
+#    Updated: 2023/03/01 17:29:06 by awallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #Default build version called with make rule = release
-build		:=
+build		:= san
 
 #Compilation of the mandatory part
 NAME		= phonebook
 
 #Buildings objects
 DIR			=
-FILES		= phonebook.cpp contact.cpp
+FILES		= PhoneBook.cpp Contact.cpp main.cpp
 SRC			+= $(addprefix ${DIR}, ${FILES})
 
 OBJ			= ${SRC:.cpp=.o}
@@ -28,10 +28,10 @@ CC			= c++ -std=c++98
 RM			= rm -rf
 
 #Conditionnal flags depending on the building version
-cflags.release	:= -Wall -Wextra -Werror -MMD -MP
-cflags.gdb		:= -g3
-cflags.sanitize	:= -g3 -fsanitize=address
-CFLAGS			= ${cflags.release} ${cflags.${build}}
+cflags.rls		:= -Wall -Wextra -Werror -MMD -MP
+cflags.gdb		:= -g3 -fstandalone-debug
+cflags.san		:= -g3 -fstandalone-debug -fsanitize=address
+CFLAGS			= ${cflags.rls} ${cflags.${build}}
 export			CFLAGS
 
 %.o : %.cpp

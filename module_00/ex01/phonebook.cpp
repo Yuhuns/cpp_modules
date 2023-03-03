@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: awallet <awallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:44:47 by awallet           #+#    #+#             */
-/*   Updated: 2023/02/14 17:11:44 by awallet          ###   ########.fr       */
+/*   Updated: 2023/03/01 18:43:40 by awallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
-int	main(void)
+void	PhoneBook::add(int index)
 {
-	PhoneBook *phone;
+	int	n;
 
-	phone = new PhoneBook();
-	std::cout << phone->lol;
+	n = -1;
+	while (++n < 5)
+		this->_contact[index].setContact(n);
 }

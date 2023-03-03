@@ -28,10 +28,10 @@ CC			= c++ -std=c++98
 RM			= rm -rf
 
 #Conditionnal flags depending on the building version
-cflags.release	:= -Wall -Wextra -Werror -MMD -MP
+cflags.rls		:= -Wall -Wextra -Werror -MMD -MP
 cflags.gdb		:= -g3
-cflags.sanitize	:= -g3 -fsanitize=address
-CFLAGS			= ${cflags.release} ${cflags.${build}}
+cflags.san		:= -g3 -fsanitize=address
+CFLAGS			= ${cflags.rls} ${cflags.${build}}
 export			CFLAGS
 
 %.o : %.cpp

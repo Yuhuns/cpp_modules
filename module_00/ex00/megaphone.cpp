@@ -20,7 +20,7 @@ int	main(int ac, char **av)
 		{
 			std::string	str = *(av + i);
 			for ( size_t j = 0; j < str.size(); j++ )
-				std::cout << static_cast<char>(std::toupper(*(*(av + i))++));
+				std::cout << (char)(std::toupper(*(*(av + i))++));
 		}
 	}
 	else

@@ -1,6 +1,9 @@
 # Prerequisites
 *.d
 
+megaphone
+phonebook
+
 # Compiled Object files
 *.slo
 *.lo
