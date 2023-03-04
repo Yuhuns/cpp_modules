@@ -6,7 +6,7 @@
 /*   By: awallet <awallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:13:13 by awallet           #+#    #+#             */
-/*   Updated: 2023/03/03 17:45:29 by awallet          ###   ########.fr       */
+/*   Updated: 2023/03/04 19:25:21 by awallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,8 @@ class Contact
 		std::string	_number;
 		std::string	_secret;
 };
+
+void	errorHandler(std::string msg);
+bool	checkData(std::string str);
 
 #endif
