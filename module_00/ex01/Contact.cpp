@@ -6,7 +6,7 @@
 /*   By: awallet <awallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:13:07 by awallet           #+#    #+#             */
-/*   Updated: 2023/03/04 19:24:56 by awallet          ###   ########.fr       */
+/*   Updated: 2023/03/07 14:25:54 by awallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,34 @@ static void	checkEmptyField(Contact *self, std::string field, int i)
 		self->setContact(i);
 }
 
+int	Contact::getIndex(void)
+{
+	return (this->_index);
+}
+
+void Contact::setIndex(unsigned int index)
+{
+	this->_index = index;
+}
+
+std::string	Contact::getContact(int index)
+{
+	switch (index)
+	{
+		case 0:
+			return (this->_firstname);
+		case 1:
+			return (this->_lastname);
+		case 2:
+			return (this->_nickname);
+		case 3:
+			return (this->_number);
+		case 4:
+			return (this->_secret);
+	}
+	return (NULL);
+}
+
 void	Contact::showContact(void)
 {
 	if (this->_firstname.empty())
@@ -49,7 +77,6 @@ void	Contact::setContact(int i)
 {
 	if (std::cin.eof())
 			exit(0);
-	this->_index = i;
 	switch (i)
 	{
 		case 0:

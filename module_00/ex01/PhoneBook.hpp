@@ -6,7 +6,7 @@
 /*   By: awallet <awallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:14:01 by awallet           #+#    #+#             */
-/*   Updated: 2023/03/03 17:51:16 by awallet          ###   ########.fr       */
+/*   Updated: 2023/03/07 14:11:45 by awallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class PhoneBook
 	public:
 		void	add(unsigned int index);
 		void	search(void);
+		void	show(unsigned int index);
 	private:
 		Contact	_contact[8];
 };

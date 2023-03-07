@@ -6,7 +6,7 @@
 /*   By: awallet <awallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:13:13 by awallet           #+#    #+#             */
-/*   Updated: 2023/03/04 19:25:21 by awallet          ###   ########.fr       */
+/*   Updated: 2023/03/07 18:04:13 by awallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,13 @@
 class Contact
 {
 	public:
-		void	setContact(int i);
-		void	showContact(void);
+		void		setContact(int i);
+		void		showContact(void);
+		std::string	getContact(int index);
+		void		setIndex(unsigned int index);
+		int			getIndex(void);
 	private:
-		int	_index;
+		unsigned int	_index;
 		std::string _firstname;
 		std::string	_lastname;
 		std::string	_nickname;
