@@ -6,7 +6,7 @@
 /*   By: awallet <awallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:44:47 by awallet           #+#    #+#             */
-/*   Updated: 2023/03/08 14:46:07 by awallet          ###   ########.fr       */
+/*   Updated: 2023/03/08 15:55:08 by awallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	PhoneBook::search(void)
 	for (int i = 0; i < MAX_CONTACT; i++)
 	{
 		if (this->_contact[0].getContact(0).empty())
-			return (errorHandler("The PhoneBook is empty."));
+			return (errorHandler("💨 The PhoneBook is empty."));
 		this->show(i);
 	}
 	std::cout << std::endl << "Please enter an index: ";
@@ -87,12 +87,12 @@ void	PhoneBook::search(void)
 	if (std::cin.eof())
 		exit(0);
 	else if (input.empty())
-		return (errorHandler("Your input can't be empty."), this->search());
+		return (errorHandler("⛔️ Your input can't be empty."), this->search());
 	else if (checkData(input) == true || input.size() > 1)
-		return (errorHandler("Can't find the contact, invalid SEARCH (only digit and 0-9)"));
+		return (errorHandler("❌ Can't find the contact, invalid SEARCH (only digit and 0-9)"));
 	index = input.at(0) - '0';
 	if (index > (MAX_CONTACT - 1))
-		return(errorHandler("Can't find the contact [" + input + "] It's only between 0 and " + std::to_string(MAX_CONTACT - 1)));
+		return(errorHandler("❌ Can't find the contact [" + input + "] It's only between 0 and " + std::to_string(MAX_CONTACT - 1)));
 	this->_contact[index].showContact();
 	
 }
