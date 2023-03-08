@@ -6,7 +6,7 @@
 /*   By: awallet <awallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 19:15:07 by awallet           #+#    #+#             */
-/*   Updated: 2023/03/08 19:20:54 by awallet          ###   ########.fr       */
+/*   Updated: 2023/03/08 19:39:44 by awallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,15 @@
 
 int	main(void)
 {
-	std::string	str = "HI THIS IS BRAIN";
-	std::string	*stringPTR = &str;
-	std::string &stringREF = str;
+	std::string	string = "HI THIS IS BRAIN";;
+	std::string	*stringPTR;
+	std::string	&stringREF = string;
 
-	std::cout << "ADDR string: " << str << std::endl;
-	std::cout << "ADDR stringPTR: " << *stringPTR << std::endl;
-	std::cout << "ADDR stringREF: " << stringREF << std::endl;
+	stringPTR = &string;
+	std::cout << "string address: " << &string << std::endl;
+	std::cout << "stringPTR address: " << stringPTR << std::endl;
+	std::cout << "stringREF address: " << &stringREF << std::endl;
+	std::cout << "string: " << string << std::endl;
+	std::cout << "stringPTR string: " << *stringPTR << std::endl;
+	std::cout << "stringREF string: " << stringREF << std::endl;
 }
