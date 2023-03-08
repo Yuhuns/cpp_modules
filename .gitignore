@@ -5,6 +5,8 @@ megaphone
 phonebook
 globalbank
 
+.vscode
+
 # Compiled Object files
 *.slo
 *.lo
