@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: awallet <awallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 17:37:33 by awallet           #+#    #+#             */
-/*   Updated: 2023/03/08 18:32:25 by awallet          ###   ########.fr       */
+/*   Created: 2023/03/08 17:27:31 by awallet           #+#    #+#             */
+/*   Updated: 2023/03/08 18:36:26 by awallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
-{
-	this->_name = name;
-}
+Zombie	*zombieHorde( int N, std::string name );
 
-Zombie::~Zombie(void)
+int	main(void)
 {
-	if (DEBUG)
-		std::cout << "[DEBUG:] "
-			<< "Zombie: " << this->_name
-			<< " is deleted." 
-			<< std::endl;
-}
+	Zombie	*zombie;
 
-void	Zombie::announce(void)
-{
-	std::cout << this->_name
-		<< ": BraiiiiiiinnnzzzZ..."
-		<< std::endl;
+	zombie = zombieHorde(42, "ZoMbIe");
+	delete[] zombie;
+	return (0);
 }

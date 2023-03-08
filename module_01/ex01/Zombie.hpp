@@ -5,15 +5,18 @@
 #include <string>
 
 #ifndef DEBUG
-# define DEBUG true
+# define DEBUG false
 #endif
 
 class Zombie
 {
+	typedef Zombie	z;
+	
 	public:
 		void	announce(void);
-		Zombie(std::string name);
+		Zombie(void);
 		~Zombie(void);
+		void	set_name(std::string name);
 		
 	private:
 		std::string	_name;
