@@ -6,7 +6,7 @@
 /*   By: awallet <awallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:13:13 by awallet           #+#    #+#             */
-/*   Updated: 2023/03/07 18:04:13 by awallet          ###   ########.fr       */
+/*   Updated: 2023/03/08 14:40:14 by awallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include <stdlib.h>
+#include <map>
+
+# define MAX_CONTACT 2
 
 class Contact
 {
@@ -22,7 +25,7 @@ class Contact
 		void		setContact(int i);
 		void		showContact(void);
 		std::string	getContact(int index);
-		void		setIndex(unsigned int index);
+		void		setIndex(int index);
 		int			getIndex(void);
 	private:
 		unsigned int	_index;

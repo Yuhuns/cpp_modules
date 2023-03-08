@@ -6,7 +6,7 @@
 /*   By: awallet <awallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:13:07 by awallet           #+#    #+#             */
-/*   Updated: 2023/03/07 14:25:54 by awallet          ###   ########.fr       */
+/*   Updated: 2023/03/08 15:01:31 by awallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	Contact::getIndex(void)
 	return (this->_index);
 }
 
-void Contact::setIndex(unsigned int index)
+void Contact::setIndex(int index)
 {
 	this->_index = index;
 }
@@ -65,12 +65,13 @@ std::string	Contact::getContact(int index)
 void	Contact::showContact(void)
 {
 	if (this->_firstname.empty())
-		return (errorHandler("Can't find contact because he doesn't exist."));
-	std::cout << "Firstname	|	" + this->_firstname << std::endl;
-	std::cout << "Last name	|	" + this->_lastname << std::endl;
-	std::cout << "Nickmame	|	" + this->_nickname << std::endl;
-	std::cout << "Number		|	" + this->_number << std::endl;
-	std::cout << "Darkest secret	|	" + this->_secret << std::endl;
+		return (errorHandler("🤷🏻‍♂️ Can't find contact because he doesn't exist."));
+	std::cout << std::endl << "=== PHONEBOOK ID: "+ std::to_string(this->_index) +", 🕵🏻 BIG BROTHER DATA INFORMATIONS ===" << std::endl;
+	std::cout << "1️⃣ Firstname		||	" + this->_firstname << std::endl;
+	std::cout << "2️⃣ Last name		||	" + this->_lastname << std::endl;
+	std::cout << "3️⃣ Nickmame		||	" + this->_nickname << std::endl;
+	std::cout << "4️⃣ Number		||	" + this->_number << std::endl;
+	std::cout << "5️⃣ Darkest secret	||	" + this->_secret << std::endl << std::endl;
 }
 
 void	Contact::setContact(int i)
@@ -81,32 +82,32 @@ void	Contact::setContact(int i)
 	{
 		case 0:
 		{
-			std::cout << "Firstname: ";
+			std::cout << "1️⃣ Firstname: ";
 			std::getline(std::cin, this->_firstname);
 			checkEmptyField(this, this->_firstname, i);
 			break ;
 		}
 		case 1:
 		{
-			std::cout << "Last name: ";
+			std::cout << "2️⃣ Last name: ";
 			std::getline(std::cin, this->_lastname);
 			checkEmptyField(this, this->_lastname, i);
 			break ;
 		}
 		case 2:
 		{
-			std::cout << "Nickname: ";
+			std::cout << "3️⃣ Nickname: ";
 			std::getline(std::cin, this->_nickname);
 			checkEmptyField(this, this->_nickname, i);
 			break ;
 		}
 		case 3:
 		{
-			std::cout << "Number: ";
+			std::cout << "4️⃣ Number: ";
 			std::getline(std::cin, this->_number);
-			if (checkData(this->_number))
+			if (checkData(this->_number) || this->_number.length() != 10)
 			{
-				std::cout << "Only digit for the number field." << std::endl;
+				std::cout << "❌ Only digit for the number field (mini. 10 numbers)" << std::endl;
 				this->_number.clear();
 				this->setContact(i);
 			}
@@ -115,7 +116,7 @@ void	Contact::setContact(int i)
 		}
 		case 4:
 		{
-			std::cout << "Secret: ";
+			std::cout << "5️⃣ Darkest Secret: ";
 			std::getline(std::cin, this->_secret);
 			checkEmptyField(this, this->_secret, i);
 			break ;

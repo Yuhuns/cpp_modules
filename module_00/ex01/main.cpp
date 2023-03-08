@@ -6,7 +6,7 @@
 /*   By: awallet <awallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:13:23 by awallet           #+#    #+#             */
-/*   Updated: 2023/03/07 18:18:52 by awallet          ###   ########.fr       */
+/*   Updated: 2023/03/08 15:00:40 by awallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,10 @@
 
 static std::string	setToUpper(std::string input)
 {
-	unsigned int	i;
-
-	if (!input.empty() && islower(input[0]))
-	{
-		i = -1;
-		while (input[++i])
+	
+	if (!input.empty())
+		for (unsigned int i = 0; i < input.length(); i++)
 			input[i] = std::toupper(input[i]);
-	}
 	return (input);
 }
 
@@ -29,26 +25,28 @@ int	main(void)
 {
 	PhoneBook	phonebook;
 	std::string	input;
-	unsigned int	index;
+	int	index;
 
 	index = 0;
+	std::cout << "📝 PHONEBOOK v0.1 --- WeLcOmE --. 📝 (MAX_CONTACT: " << std::to_string(MAX_CONTACT) << ")" << std::endl << std::endl;
 	while (1)
 	{
+		if (MAX_CONTACT <= 0)
+			return (std::cout << "❌ Can't load the phonebook MAX_CONTACT is lower or equal to 0" << std::endl, 1);
 		std::cout << "Please select between ADD, SEARCH or EXIT: ";
 		std::getline(std::cin, input);
-		if (std::cin.eof())
-			exit(0);
 		input = setToUpper(input);
 		if (input.compare("ADD") == 0)
 		{
-			if (index == 8)
+			if (index == MAX_CONTACT)
 				index = 0;
 			phonebook.add(index);
+			std::cout << "✅ Registred in the phonebook with the ID: " + std::to_string(index) + " (MAX: " + std::to_string(MAX_CONTACT - 1) + ")" << std::endl;
 			index++;
 		}
 		else if (input.compare("SEARCH") == 0)
 			phonebook.search();
-		else if (input.compare("EXIT") == 0)
+		else if (input.compare("EXIT") == 0 || std::cin.eof())
 			break ;
 		std::cout.clear();
 		std::cin.clear();
