@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hordeZombie.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: awallet <awallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 18:03:43 by awallet           #+#    #+#             */
-/*   Updated: 2023/03/11 12:24:49 by awallet          ###   ########.fr       */
+/*   Created: 2023/03/11 16:27:51 by awallet           #+#    #+#             */
+/*   Updated: 2023/03/11 16:57:03 by awallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
-Zombie	*zombieHorde( int N, std::string name )
+int	main(int ac, char **av)
 {
-	Zombie	*horde;
-	
-	horde = NULL;
-	if (N > 0)
-	{
-		horde = new Zombie[N];
-		while (N--)
-		{
-			horde[N].set_name(name);
-			horde[N].announce();
-		}
-	}
-	return (horde);
+	Harl	harl;
+
+	if (ac == 2)
+		harl.complain(av[1]);
+	return (0);
 }

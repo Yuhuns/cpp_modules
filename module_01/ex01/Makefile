@@ -6,12 +6,12 @@
 #    By: awallet <awallet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/08 17:29:53 by awallet           #+#    #+#              #
-#    Updated: 2023/03/08 18:34:30 by awallet          ###   ########.fr        #
+#    Updated: 2023/03/11 12:25:50 by awallet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #Default build version called with make rule = release
-build		:= debug
+build		:= 
 
 #Compilation of the mandatory part
 NAME		= hordeZombie

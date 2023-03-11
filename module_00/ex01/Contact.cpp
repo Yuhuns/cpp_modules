@@ -6,7 +6,7 @@
 /*   By: awallet <awallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:13:07 by awallet           #+#    #+#             */
-/*   Updated: 2023/03/08 15:01:31 by awallet          ###   ########.fr       */
+/*   Updated: 2023/03/10 15:21:49 by awallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	Contact::showContact(void)
 {
 	if (this->_firstname.empty())
 		return (errorHandler("🤷🏻‍♂️ Can't find contact because he doesn't exist."));
-	std::cout << std::endl << "=== PHONEBOOK ID: "+ std::to_string(this->_index) +", 🕵🏻 BIG BROTHER DATA INFORMATIONS ===" << std::endl;
+	std::cout << std::endl << "=== PHONEBOOK ID:" << this->_index << ", 🕵🏻 BIG BROTHER DATA INFORMATIONS ===" << std::endl;
 	std::cout << "1️⃣ Firstname		||	" + this->_firstname << std::endl;
 	std::cout << "2️⃣ Last name		||	" + this->_lastname << std::endl;
 	std::cout << "3️⃣ Nickmame		||	" + this->_nickname << std::endl;

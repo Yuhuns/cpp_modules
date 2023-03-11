@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hordeZombie.cpp                                    :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: awallet <awallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 18:03:43 by awallet           #+#    #+#             */
-/*   Updated: 2023/03/11 12:24:49 by awallet          ###   ########.fr       */
+/*   Created: 2023/03/10 15:37:37 by awallet           #+#    #+#             */
+/*   Updated: 2023/03/11 12:58:15 by awallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
 
-Zombie	*zombieHorde( int N, std::string name )
+#include "HumanB.hpp"
+
+HumanB::HumanB(std::string name)
 {
-	Zombie	*horde;
-	
-	horde = NULL;
-	if (N > 0)
-	{
-		horde = new Zombie[N];
-		while (N--)
-		{
-			horde[N].set_name(name);
-			horde[N].announce();
-		}
-	}
-	return (horde);
+	this->_name = name;
+	this->_weapon = NULL;
+}
+
+HumanB::~HumanB(void)
+{
+	return ;
+}
+
+void	HumanB::setWeapon(Weapon &weapon)
+{
+	_weapon = &weapon;
+}
+
+void	HumanB::attack(void)
+{
+	std::cout << _name << " attacks with their " << _weapon->getType() << std::endl;
 }

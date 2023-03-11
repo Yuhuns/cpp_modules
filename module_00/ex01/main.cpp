@@ -6,7 +6,7 @@
 /*   By: awallet <awallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:13:23 by awallet           #+#    #+#             */
-/*   Updated: 2023/03/08 15:00:40 by awallet          ###   ########.fr       */
+/*   Updated: 2023/03/10 15:23:05 by awallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(void)
 	int	index;
 
 	index = 0;
-	std::cout << "📝 PHONEBOOK v0.1 --- WeLcOmE --. 📝 (MAX_CONTACT: " << std::to_string(MAX_CONTACT) << ")" << std::endl << std::endl;
+	std::cout << "📝 PHONEBOOK v0.1 --- WeLcOmE --. 📝 (MAX_CONTACT: " << MAX_CONTACT << ")" << std::endl << std::endl;
 	while (1)
 	{
 		if (MAX_CONTACT <= 0)
@@ -41,7 +41,7 @@ int	main(void)
 			if (index == MAX_CONTACT)
 				index = 0;
 			phonebook.add(index);
-			std::cout << "✅ Registred in the phonebook with the ID: " + std::to_string(index) + " (MAX: " + std::to_string(MAX_CONTACT - 1) + ")" << std::endl;
+			std::cout << "✅ Registred in the phonebook with the ID: " << index << " (MAX: " << MAX_CONTACT - 1 << ")" << std::endl;
 			index++;
 		}
 		else if (input.compare("SEARCH") == 0)

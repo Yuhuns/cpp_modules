@@ -6,7 +6,7 @@
 /*   By: awallet <awallet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 16:44:47 by awallet           #+#    #+#             */
-/*   Updated: 2023/03/08 15:55:08 by awallet          ###   ########.fr       */
+/*   Updated: 2023/03/10 15:26:57 by awallet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,20 +44,21 @@ void	PhoneBook::show(int index)
 {
 	int	i = this->_contact[index].getIndex();
 	std::string 	firstname = this->_contact[index].getContact(0);
+	std::string		sIndex;
 
 	if (firstname.empty())
 		return ;
 	else if (i == 0)
 	{
-		std::map<int, std::string> map; 
+		std::string	map[4];
 		std::cout << std::endl;
 		map[0] = "index"; map[1] = "first name"; map[2] = "last name"; map[3] = "nickname";
-		for (unsigned int key = 0; key < map.size(); key++)
+		for (unsigned int key = 0; key < 4; key++)
 			display(map[key]);
-		map.clear(); 
 		std::cout << std::endl;
 	}
-	display(std::to_string(i));
+	sIndex = i + '0';
+	display(sIndex);
 	for (int n = 0; n < 3; n++)
 	{	
 		int	length = this->_contact[index].getContact(n).size();
@@ -85,14 +86,20 @@ void	PhoneBook::search(void)
 	std::cout << std::endl << "Please enter an index: ";
 	std::getline(std::cin, input);
 	if (std::cin.eof())
+	{
+		std::cin.clear();
+		std::cout.clear();
+		input.clear();
 		exit(0);
+	}
 	else if (input.empty())
 		return (errorHandler("⛔️ Your input can't be empty."), this->search());
 	else if (checkData(input) == true || input.size() > 1)
 		return (errorHandler("❌ Can't find the contact, invalid SEARCH (only digit and 0-9)"));
 	index = input.at(0) - '0';
+	
 	if (index > (MAX_CONTACT - 1))
-		return(errorHandler("❌ Can't find the contact [" + input + "] It's only between 0 and " + std::to_string(MAX_CONTACT - 1)));
+		return(errorHandler("❌ Can't find the contact [" + input + "]"));
 	this->_contact[index].showContact();
 	
 }
